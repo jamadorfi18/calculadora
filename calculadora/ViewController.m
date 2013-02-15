@@ -13,7 +13,8 @@
 @implementation ViewController
 
 -(IBAction)Calculate
-{//version 
+{//version
+    //version ii
     if (SegmentCntrlMathSign.selectedSegmentIndex == 0){
         float x = ([txtFieldValor1.text floatValue]);
         float c = x+([txtFieldValor2.text floatValue]);
