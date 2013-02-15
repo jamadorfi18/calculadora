@@ -8,22 +8,58 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
 
-@end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+-(IBAction)Calculate
+{//version 
+    if (SegmentCntrlMathSign.selectedSegmentIndex == 0){
+        float x = ([txtFieldValor1.text floatValue]);
+        float c = x+([txtFieldValor2.text floatValue]);
+        
+        LabelResult.text=[[NSString alloc]initWithFormat:@"%2.f",c];
+        
+        [self->txtFieldValor1 resignFirstResponder];
+        [self->txtFieldValor2 resignFirstResponder];
+    }
+    
+    if (SegmentCntrlMathSign.selectedSegmentIndex == 1){
+        float x = ([txtFieldValor1.text floatValue]);
+        float c = x-([txtFieldValor2.text floatValue]);
+        
+        LabelResult.text=[[NSString alloc]initWithFormat:@"%2.f",c];
+        
+        [self->txtFieldValor1 resignFirstResponder];
+        [self->txtFieldValor2 resignFirstResponder];
+    }
+    
+    if (SegmentCntrlMathSign.selectedSegmentIndex == 2){
+        float x = ([txtFieldValor1.text floatValue]);
+        float c = x*([txtFieldValor2.text floatValue]);
+        
+        LabelResult.text=[[NSString alloc]initWithFormat:@"%2.f",c];
+        
+        [self->txtFieldValor1 resignFirstResponder];
+        [self->txtFieldValor2 resignFirstResponder];
+    }
+    
+    if (SegmentCntrlMathSign.selectedSegmentIndex == 3){
+        float x = ([txtFieldValor1.text floatValue]);
+        float c = x/([txtFieldValor2.text floatValue]);
+        
+        LabelResult.text=[[NSString alloc]initWithFormat:@"%2.f",c];
+        
+        [self->txtFieldValor1 resignFirstResponder];
+        [self->txtFieldValor2 resignFirstResponder];
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(IBAction)Clear{
+    txtFieldValor1.text = @"";
+    txtFieldValor2.text = @"";
+    LabelResult.text = @"";
 }
+
 
 @end
